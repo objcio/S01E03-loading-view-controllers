@@ -6,7 +6,7 @@
 
 import UIKit
 
-let url = NSURL(string: "http://localhost:8000/episode.json")!
+let url = URL(string: "http://localhost:8000/episode.json")!
 let episodeResource = Resource<Episode>(url: url, parseJSON: { anyObject in
     (anyObject as? JSONDictionary).flatMap(Episode.init)
 })
@@ -16,7 +16,7 @@ let sharedWebservice = Webservice()
 
 
 final class EpisodeDetailViewController: UIViewController {
-    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     let titleLabel = UILabel()
     
     convenience init(episode: Episode) {
@@ -36,7 +36,7 @@ final class EpisodeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .whiteColor()
+        view.backgroundColor = .white
         
         spinner.hidesWhenStopped = true
         spinner.translatesAutoresizingMaskIntoConstraints = false

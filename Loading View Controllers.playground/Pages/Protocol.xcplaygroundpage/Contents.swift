@@ -6,7 +6,7 @@
 
 import UIKit
 
-let url = NSURL(string: "http://localhost:8000/episode.json")!
+let url = URL(string: "http://localhost:8000/episode.json")!
 let episodeResource = Resource<Episode>(url: url, parseJSON: { anyObject in
     (anyObject as? JSONDictionary).flatMap(Episode.init)
 })
@@ -18,11 +18,11 @@ let sharedWebservice = Webservice()
 protocol Loading {
     associatedtype ResourceType
     var spinner: UIActivityIndicatorView { get }
-    func configure(value: ResourceType)
+    func configure(_ value: ResourceType)
 }
 
 extension Loading where Self: UIViewController {
-    func load(resource: Resource<ResourceType>) {
+    func load(_ resource: Resource<ResourceType>) {
         spinner.startAnimating()
         sharedWebservice.load(resource) { [weak self] result in
             self?.spinner.stopAnimating()
@@ -34,7 +34,7 @@ extension Loading where Self: UIViewController {
 
 
 final class EpisodeDetailViewController: UIViewController, Loading {
-    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     let titleLabel = UILabel()
     
     convenience init(episode: Episode) {
@@ -47,13 +47,13 @@ final class EpisodeDetailViewController: UIViewController, Loading {
         load(resource)
     }
     
-    func configure(value: Episode) {
+    func configure(_ value: Episode) {
         titleLabel.text = value.title
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .whiteColor()
+        view.backgroundColor = .white
 
         spinner.hidesWhenStopped = true
         spinner.translatesAutoresizingMaskIntoConstraints = false
