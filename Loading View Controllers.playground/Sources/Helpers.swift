@@ -36,3 +36,8 @@ extension NSLayoutAnchor {
 public func mainQueue(_ block: @escaping () -> ()) {
     DispatchQueue.main.async(execute: block)
 }
+
+public func mainQueue(after delay: Double, _ block: @escaping () -> ()) {
+    let deadline = DispatchTime.now() + delay
+    DispatchQueue.main.asyncAfter(deadline: deadline, execute: block)
+}

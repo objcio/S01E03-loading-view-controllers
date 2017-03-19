@@ -31,7 +31,7 @@ public struct Resource<A> {
 }
 
 extension Resource {
-    public init(url: URL, parseJSON: @escaping (AnyObject) -> A?) {
+    public init(url: URL, parseJSON: @escaping (Any) -> A?) {
         self.url = url
         self.parse = { data in
             let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
@@ -75,7 +75,7 @@ public final class Webservice {
         URLSession.shared.dataTask(with: resource.url, completionHandler: { data, response, _ in
             let parsed = data.flatMap(resource.parse)
             let result = Result(parsed, or: WebserviceError.other)
-            mainQueue { completion(result) }
+            mainQueue(after: 1) { completion(result) }
         }) .resume()
     }
 }

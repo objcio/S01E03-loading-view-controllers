@@ -15,7 +15,7 @@ let episodeResource = Resource<Episode>(url: url, parseJSON: { anyObject in
 final class LoadingViewController: UIViewController {
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
 
-    init<A>(load: ((Result<A>) -> ()) -> (), build: @escaping (A) -> UIViewController) {
+    init<A>(load: (@escaping  (Result<A>) -> ()) -> (), build: @escaping (A) -> UIViewController) {
         super.init(nibName: nil, bundle: nil)
         spinner.startAnimating()
         load() { [weak self] result in
@@ -76,5 +76,5 @@ let episodesVC = LoadingViewController(load: { callback in
 episodesVC.view.frame = CGRect(x: 0, y: 0, width: 250, height: 300)
 
 
-import XCPlayground
-XCPlaygroundPage.currentPage.liveView = episodesVC
+import PlaygroundSupport
+PlaygroundPage.current.liveView = episodesVC
