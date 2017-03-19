@@ -1,0 +1,144 @@
+[
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 383,
+  "remove": 1,
+  "text": "let t",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 550,
+  "remove": 3,
+  "text": " ",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 579,
+  "remove": 2,
+  "text": "(",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 585,
+  "text": ")",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 636,
+  "remove": 3,
+  "text": " ",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 655,
+  "text": "@escaping (",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 664,
+  "text": ")",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 755,
+  "remove": 3,
+  "text": " ",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 776,
+  "remove": 5,
+  "text": "jsonO",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 786,
+  "remove": 1,
+  "text": "(w",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 790,
+  "remove": 5,
+  "text": ": ",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 809,
+  "remove": 3,
+  "text": " ",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 816,
+  "text": "Serialization.",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 960,
+  "remove": 5,
+  "text": "r",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1032,
+  "remove": 5,
+  "text": "r",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1327,
+  "remove": 5,
+  "text": "r",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1522,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1557,
+  "text": "@escaping (",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1566,
+  "text": ")",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1583,
+  "remove": 3,
+  "text": " ",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1602,
+  "remove": 10,
+  "text": "d",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1621,
+  "remove": 1,
+  "text": "(w",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1625,
+  "remove": 4,
+  "text": ": ",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1641,
+  "remove": 2,
+  "text": ", completionHandler: ",
+ },
+ {
+  "file": "/Users/CalQL8ed-K-OS/Workbench/open-source/S01E03-loading-view-controllers/Loading View Controllers.playground/Sources/Networking.swift",
+  "offset": 1841,
+  "text": ") ",
+ }
+]
