@@ -6,16 +6,16 @@
 
 import UIKit
 
-let url = NSURL(string: "http://localhost:8000/episode.json")!
+let url = URL(string: "http://localhost:8000/episode.json")!
 let episodeResource = Resource<Episode>(url: url, parseJSON: { anyObject in
     (anyObject as? JSONDictionary).flatMap(Episode.init)
 })
 
 
 final class LoadingViewController: UIViewController {
-    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+    let spinner = UIActivityIndicatorView(style: .medium)
 
-    init<A>(load: ((Result<A>) -> ()) -> (), build: (A) -> UIViewController) {
+    init<A>(load: (@escaping (Result<A>) -> ()) -> (), build: @escaping (A) -> UIViewController) {
         super.init(nibName: nil, bundle: nil)
         spinner.startAnimating()
         load() { [weak self] result in
@@ -28,7 +28,7 @@ final class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .whiteColor()
+        view.backgroundColor = .white
         spinner.hidesWhenStopped = true
         spinner.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(spinner)
@@ -39,12 +39,12 @@ final class LoadingViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func add(content content: UIViewController) {
-        addChildViewController(content)
+    func add(content: UIViewController) {
+        addChild(content)
         view.addSubview(content.view)
         content.view.translatesAutoresizingMaskIntoConstraints = false
         content.view.constrainEdges(toMarginOf: view)
-        content.didMoveToParentViewController(self)
+        content.didMove(toParent: self)
     }
 }
 
@@ -58,7 +58,7 @@ final class EpisodeDetailViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        view.backgroundColor = .whiteColor()
+        view.backgroundColor = .white
         
         view.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -70,11 +70,11 @@ final class EpisodeDetailViewController: UIViewController {
 let sharedWebservice = Webservice()
 
 let episodesVC = LoadingViewController(load: { callback in
-    sharedWebservice.load(episodeResource, completion: callback)
+    sharedWebservice.load(resource: episodeResource, completion: callback)
 }, build: EpisodeDetailViewController.init)
 
 episodesVC.view.frame = CGRect(x: 0, y: 0, width: 250, height: 300)
 
 
-import XCPlayground
-XCPlaygroundPage.currentPage.liveView = episodesVC
+import PlaygroundSupport
+PlaygroundPage.current.liveView = episodesVC

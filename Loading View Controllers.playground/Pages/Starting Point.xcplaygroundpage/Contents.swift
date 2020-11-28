@@ -6,7 +6,7 @@
 
 import UIKit
 
-let url = NSURL(string: "http://localhost:8000/episode.json")!
+let url = URL(string: "http://localhost:8000/episode.json")!
 let episodeResource = Resource<Episode>(url: url, parseJSON: { anyObject in
     (anyObject as? JSONDictionary).flatMap(Episode.init)
 })
@@ -16,7 +16,7 @@ let sharedWebservice = Webservice()
 
 
 final class EpisodeDetailViewController: UIViewController {
-    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+    let spinner = UIActivityIndicatorView(style: .medium)
     let titleLabel = UILabel()
     
     convenience init(episode: Episode) {
@@ -27,7 +27,7 @@ final class EpisodeDetailViewController: UIViewController {
     convenience init(resource: Resource<Episode>) {
         self.init()
         spinner.startAnimating()
-        sharedWebservice.load(resource) { [weak self] result in
+        sharedWebservice.load(resource: resource) { [weak self] result in
             self?.spinner.stopAnimating()
             guard let value = result.value else { return } // TODO loading error
             self?.titleLabel.text = value.title
@@ -36,7 +36,7 @@ final class EpisodeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .whiteColor()
+        view.backgroundColor = .white
         
         spinner.hidesWhenStopped = true
         spinner.translatesAutoresizingMaskIntoConstraints = false
@@ -54,5 +54,5 @@ let episodesVC = EpisodeDetailViewController(resource: episodeResource)
 episodesVC.view.frame = CGRect(x: 0, y: 0, width: 250, height: 300)
 
 
-import XCPlayground
-XCPlaygroundPage.currentPage.liveView = episodesVC
+import PlaygroundSupport
+PlaygroundPage.current.liveView = episodesVC

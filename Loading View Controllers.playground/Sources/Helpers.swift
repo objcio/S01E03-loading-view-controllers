@@ -1,38 +1,57 @@
 import UIKit
 
 extension UIView {
-    public func constrainEqual(attribute: NSLayoutAttribute, to: AnyObject, multiplier: CGFloat = 1, constant: CGFloat = 0) {
-        constrainEqual(attribute, to: to, attribute, multiplier: multiplier, constant: constant)
+    public func constrainEqual(
+        attribute: NSLayoutConstraint.Attribute,
+        to: AnyObject,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0
+    ) {
+        constrainEqual(attribute: attribute, to: to, attribute, multiplier: multiplier, constant: constant)
     }
     
-    public func constrainEqual(attribute: NSLayoutAttribute, to: AnyObject, _ toAttribute: NSLayoutAttribute, multiplier: CGFloat = 1, constant: CGFloat = 0) {
-        NSLayoutConstraint.activateConstraints([
-            NSLayoutConstraint(item: self, attribute: attribute, relatedBy: .Equal, toItem: to, attribute: toAttribute, multiplier: multiplier, constant: constant)
-            ]
-        )
+    public func constrainEqual(
+        attribute: NSLayoutConstraint.Attribute,
+        to: AnyObject,
+        _ toAttribute: NSLayoutConstraint.Attribute,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0
+    ) {
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(
+                item: self,
+                attribute: attribute,
+                relatedBy: .equal,
+                toItem: to,
+                attribute: toAttribute,
+                multiplier: multiplier,
+                constant: constant
+            )
+        ])
     }
     
     public func constrainEdges(toMarginOf view: UIView) {
-        constrainEqual(.Top, to: view, .TopMargin)
-        constrainEqual(.Leading, to: view, .LeadingMargin)
-        constrainEqual(.Trailing, to: view, .TrailingMargin)
-        constrainEqual(.Bottom, to: view, .BottomMargin)
+        constrainEqual(attribute: .top, to: view, .topMargin)
+        constrainEqual(attribute: .leading, to: view, .leadingMargin)
+        constrainEqual(attribute: .trailing, to: view, .trailingMargin)
+        constrainEqual(attribute: .bottom, to: view, .bottomMargin)
     }
     
     public func center(inView view: UIView) {
-        centerXAnchor.constrainEqual(view.centerXAnchor)
-        centerYAnchor.constrainEqual(view.centerYAnchor)
+        centerXAnchor.constrainEqual(anchor: view.centerXAnchor)
+        centerYAnchor.constrainEqual(anchor: view.centerYAnchor)
     }
 }
 
 extension NSLayoutAnchor {
-    public func constrainEqual(anchor: NSLayoutAnchor, constant: CGFloat = 0) {
-        let constraint = constraintEqualToAnchor(anchor, constant: constant)
-        constraint.active = true
+    @objc public func constrainEqual(anchor: NSLayoutAnchor, constant: CGFloat = 0) {
+        constraint(equalTo: anchor, constant: constant).isActive = true
     }
 }
 
 
-public func mainQueue(block: () -> ()) {
-    dispatch_async(dispatch_get_main_queue(), block)
+public func mainQueue(block: @escaping () -> ()) {
+    DispatchQueue.main.async {
+        block()
+    }
 }
